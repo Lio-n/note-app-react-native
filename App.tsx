@@ -3,8 +3,8 @@ import { loadAsync } from "expo-font";
 import { JosefinSans_400Regular, JosefinSans_700Bold } from "@expo-google-fonts/josefin-sans";
 import { RecoilRoot } from "recoil";
 import { HomeScreen } from "@app/screens";
-import { useEffect, useCallback, useState } from "react";
-import { View } from "react-native";
+import { useEffect, useCallback, useState, Suspense } from "react";
+import { View, Text } from "react-native";
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -47,11 +47,19 @@ const App = () => {
   }
 
   return (
-    <RecoilRoot>
-      <View onLayout={onLayoutRootView}>
-        <HomeScreen />
-      </View>
-    </RecoilRoot>
+    <Suspense
+      fallback={
+        <View>
+          <Text>Loading</Text>
+        </View>
+      }
+    >
+      <RecoilRoot>
+        <View onLayout={onLayoutRootView}>
+          <HomeScreen />
+        </View>
+      </RecoilRoot>
+    </Suspense>
   );
 };
 
