@@ -1,13 +1,14 @@
 {
   "expo": {
-    "name": "NoteApp",
-    "slug": "NoteApp",
+    "name": "Note App",
+    "slug": "note-app",
+    "owner": "lio-n",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/death-note.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/death-note.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#000"
     },
@@ -16,9 +17,16 @@
     },
     "assetBundlePatterns": ["**/*"],
     "android": {
+      "package": "com.lion.noteapp",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#09e639"
+        "backgroundColor": "#000"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "315099d3-b0b2-4e2c-a213-99a9d49c9b43"
       }
     }
   }

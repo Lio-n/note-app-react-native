@@ -21,7 +21,7 @@ const ListOfNotes = ({ data }: { data: NoteData[] }) => {
   };
 
   return (
-    <View style={{ height: "50%", width: "100%", marginBottom: 20 }}>
+    <View style={{ height: "45%", width: "100%", marginBottom: 20 }}>
       {data.length !== 0 && (
         <View>
           <ScrollView>
